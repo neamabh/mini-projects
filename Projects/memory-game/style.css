@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, #ffe8f5 0%, #f8eaff 40%, #efe7ff 100%);
+  min-height: 100vh;
+  color: #5f4b6f;
+}
+
+.page {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+.top-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.top-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #7d4f95;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #82688d;
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid #efd7fb;
+  border-radius: 20px;
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(150, 110, 170, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.stat-box .label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #8b7296;
+}
+
+.stat-box span:last-child {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #6f4a84;
+}
+
+.best {
+  background: rgba(255, 247, 252, 0.9);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.main-btn {
+  background: linear-gradient(135deg, #f5a8d7, #caa5ff);
+  color: white;
+  box-shadow: 0 8px 18px rgba(202, 165, 255, 0.35);
+}
+
+.secondary-btn {
+  background: white;
+  color: #7e5b95;
+  border: 2px solid #e8d3f7;
+  box-shadow: 0 8px 18px rgba(180, 150, 210, 0.14);
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.game-board {
+  width: min(760px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.55s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner,
+.card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(128, 95, 149, 0.16);
+}
+
+.card-back {
+  background:
+    linear-gradient(145deg, #ffc9e6, #d8b7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.card-front {
+  background: #fffafd;
+  transform: rotateY(180deg);
+  border: 3px solid #f2d9f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-front img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.card-front .flower-name {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #785c88;
+}
+
+.card.matched {
+  pointer-events: none;
+}
+
+.card.matched .card-front {
+  box-shadow: inset 0 0 0 3px #bdf0cd, 0 10px 22px rgba(128, 95, 149, 0.16);
+}
+
+.message-box {
+  margin-top: 22px;
+  text-align: center;
+}
+
+#statusText {
+  margin: 0;
+  font-size: 1rem;
+  color: #725a80;
+  background: rgba(255, 255, 255, 0.65);
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 2px solid #eedaf8;
+}
+
+.win-message {
+  color: #6a4780;
+  font-weight: bold;
+}
+
+@media (max-width: 760px) {
+  .stats-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .game-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: 94%;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-front .flower-name {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SudokuBoard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="game-header">
+      <h1>SudokuBoard</h1>
+      <p class="subtitle">Choose an empty cell and fill it with the correct number.</p>
+    </header>
+
+    <section class="top-panel">
+      <div class="info-box">
+        <span class="label">Level</span>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <div class="info-box">
+        <span class="label">Time</span>
+        <span id="timer">00:00</span>
+      </div>
+
+      <div class="info-box">
+        <span class="label">Mistakes</span>
+        <span id="mistakes">0 / 5</span>
+      </div>
+
+      <div class="info-box">
+        <span class="label">Hints</span>
+        <span id="hints">3</span>
+      </div>
+    </section>
+
+    <section class="board-section">
+      <div id="sudoku-board" class="sudoku-board"></div>
+    </section>
+
+    <section class="controls">
+      <div class="number-pad">
+        <button class="num-btn" data-number="1">1</button>
+        <button class="num-btn" data-number="2">2</button>
+        <button class="num-btn" data-number="3">3</button>
+        <button class="num-btn" data-number="4">4</button>
+        <button class="num-btn" data-number="5">5</button>
+        <button class="num-btn" data-number="6">6</button>
+        <button class="num-btn" data-number="7">7</button>
+        <button class="num-btn" data-number="8">8</button>
+        <button class="num-btn" data-number="9">9</button>
+      </div>
+
+      <div class="action-buttons">
+        <button id="erase-btn">Erase</button>
+        <button id="hint-btn">Hint</button>
+        <button id="check-btn">Check Board</button>
+        <button id="reset-btn">Reset</button>
+        <button id="new-game-btn">New Game</button>
+      </div>
+    </section>
+
+    <p id="message" class="message">Click an empty cell to start playing.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

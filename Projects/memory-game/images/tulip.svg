@@ -1,0 +1,9 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="220" rx="40" fill="#fff9fb"></rect>
+  <rect x="106" y="92" width="8" height="92" rx="4" fill="#62b96a"></rect>
+  <path d="M78 104C78 71 94 55 110 55C126 55 142 71 142 104V110H78V104Z" fill="#f18bb8"></path>
+  <path d="M90 98C90 72 100 48 110 64C120 48 130 72 130 98V110H90V98Z" fill="#ffb0cf"></path>
+  <path d="M78 104L94 88L110 104L126 88L142 104" fill="none" stroke="#dc6f9d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+  <ellipse cx="92" cy="146" rx="20" ry="10" transform="rotate(-35 92 146)" fill="#84cf84"></ellipse>
+  <ellipse cx="128" cy="138" rx="20" ry="10" transform="rotate(35 128 138)" fill="#84cf84"></ellipse>
+</svg>

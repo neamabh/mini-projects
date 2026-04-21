@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מחשבון פרמיות - כלל ביטוח ופיננסים</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-blur blur-1"></div>
+  <div class="background-blur blur-2"></div>
+
+  <main class="page-shell">
+    <section class="hero-card">
+      <div class="logo-row">
+        <img src="images/logo-clal.jpg" alt="לוגו כלל ביטוח ופיננסים" class="logo" />
+      </div>
+
+      <div class="hero-badge">Premium Calculator</div>
+
+      <h1>מחשבון פרמיות</h1>
+      <p class="hero-text">
+מחשבון לחישוב הפרמיה החודשית והשנתית .      </p>
+    </section>
+
+    <section class="calculator-card">
+      <div class="section-head">
+        <div>
+          <h2>פרטי מבוטח ופוליסה</h2>
+          <p>מלאי את כל השדות לצורך חישוב מדויק של הפרמיה</p>
+        </div>
+        <span class="mini-badge">Clal Premium View</span>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="fullName">שם מבוטח</label>
+          <div class="input-box">
+            <span class="icon">👤</span>
+            <input type="text" id="fullName" placeholder="הכניסי שם מלא" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age">גיל</label>
+          <div class="input-box">
+            <span class="icon">🎂</span>
+            <input type="number" id="age" placeholder="לדוגמה: 28" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="insuranceType">סוג ביטוח</label>
+          <div class="input-box">
+            <span class="icon">🛡️</span>
+            <select id="insuranceType">
+              <option value="">בחרי סוג ביטוח</option>
+              <option value="life">ביטוח חיים</option>
+              <option value="health">ביטוח בריאות</option>
+              <option value="apartment">ביטוח דירה</option>
+              <option value="car">ביטוח רכב</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="coverageAmount">סכום כיסוי (₪)</label>
+          <div class="input-box">
+            <span class="icon">💰</span>
+            <input type="number" id="coverageAmount" placeholder="לדוגמה: 300000" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="years">תקופת ביטוח (בשנים)</label>
+          <div class="input-box">
+            <span class="icon">📆</span>
+            <input type="number" id="years" placeholder="לדוגמה: 10" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="smoking">מצב עישון</label>
+          <div class="input-box">
+            <span class="icon">🚭</span>
+            <select id="smoking">
+              <option value="">בחרי אפשרות</option>
+              <option value="no">לא מעשן/ת</option>
+              <option value="yes">מעשן/ת</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="riskLevel">רמת סיכון</label>
+          <div class="input-box">
+            <span class="icon">📈</span>
+            <select id="riskLevel">
+              <option value="">בחרי רמת סיכון</option>
+              <option value="low">נמוכה</option>
+              <option value="medium">בינונית</option>
+              <option value="high">גבוהה</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="discount">הנחה (%)</label>
+          <div class="input-box">
+            <span class="icon">🏷️</span>
+            <input type="number" id="discount" placeholder="לדוגמה: 10" />
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons-row">
+        <button id="calculateBtn" class="btn btn-primary" type="button">חשב פרמיה</button>
+        <button id="sampleBtn" class="btn btn-secondary" type="button">מלא נתוני דוגמה</button>
+        <button id="resetBtn" class="btn btn-light" type="button">נקה טופס</button>
+      </div>
+
+      <p id="message" class="message"></p>
+    </section>
+
+    <section id="resultSection" class="result-card hidden">
+      <div class="result-top-line"></div>
+
+      <div class="result-icon">💎</div>
+      <p class="result-badge">Premium Calculation Result</p>
+      <h2>תוצאת חישוב הפרמיה</h2>
+
+      <div class="main-premium-box">
+        <span class="main-premium-label">פרמיה חודשית</span>
+        <div id="monthlyPremium" class="main-premium-value">₪0.00</div>
+      </div>
+
+      <div class="summary-number-grid">
+        <div class="number-card">
+          <span>פרמיה שנתית</span>
+          <strong id="yearlyPremium">₪0.00</strong>
+        </div>
+
+        <div class="number-card">
+          <span>אחוז הנחה</span>
+          <strong id="resultDiscount">0%</strong>
+        </div>
+
+        <div class="number-card">
+          <span>סטטוס חישוב</span>
+          <strong id="resultStatus">מוכן</strong>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-title">שם מבוטח</span>
+          <strong id="resultName">-</strong>
+        </div>
+
+        <div class="info-card">
+          <span class="info-title">סוג ביטוח</span>
+          <strong id="resultInsurance">-</strong>
+        </div>
+
+        <div class="info-card">
+          <span class="info-title">רמת סיכון</span>
+          <strong id="resultRisk">-</strong>
+        </div>
+
+        <div class="info-card">
+          <span class="info-title">סכום כיסוי</span>
+          <strong id="resultCoverage">-</strong>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-header">
+          <h3>פירוט החישוב</h3>
+          <span class="mini-badge">Breakdown</span>
+        </div>
+        <ul id="summaryList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

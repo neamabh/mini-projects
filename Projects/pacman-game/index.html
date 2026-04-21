@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pac-Man Deluxe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-glow"></div>
+
+  <div class="game-wrapper">
+    <header class="top-bar">
+      <h1 class="game-title">PAC-MAN</h1>
+
+      <div class="info-panel">
+        <div class="info-box">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">High Score</span>
+          <span id="highScore">0</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Lives</span>
+          <span id="lives">3</span>
+        </div>
+
+        <div class="info-box controls-box">
+          <span class="label">Controls</span>
+          <span>↑ ↓ ← →</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <div class="canvas-frame">
+        <canvas id="gameCanvas" width="560" height="616"></canvas>
+
+        <div id="startScreen" class="screen-overlay start-screen">
+          <div class="screen-card">
+            <h2 class="screen-title glow-yellow">PAC-MAN</h2>
+            <p class="screen-subtitle">Classic Maze Chase Game</p>
+
+            <div class="mini-preview">
+              <div class="mini-pacman"></div>
+              <div class="mini-dots"></div>
+              <div class="mini-ghost ghost-red"></div>
+              <div class="mini-ghost ghost-pink"></div>
+            </div>
+
+            <div class="instructions-box">
+              <p>Use the arrow keys to move Pac-Man</p>
+              <p>Eat all the pellets to win</p>
+              <p>Avoid ghosts or catch them after a power pellet</p>
+            </div>
+
+            <button id="startBtn" class="action-btn main-btn">Start Game</button>
+          </div>
+        </div>
+
+        <div id="gameOverlay" class="screen-overlay hidden">
+          <div class="screen-card result-card">
+            <h2 id="overlayTitle" class="screen-title">Game Over</h2>
+            <p id="overlayText" class="screen-subtitle">Try again!</p>
+            <button id="restartBtn" class="action-btn main-btn">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bottom-panel">
+      <button id="pauseBtn" class="action-btn">Pause</button>
+      <button id="resetBtn" class="action-btn">Reset</button>
+      <button id="resetHighScoreBtn" class="action-btn">Reset High Score</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

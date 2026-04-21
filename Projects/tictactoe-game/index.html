@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X-O Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="game-container">
+    <h1>איקס-עיגול</h1>
+    <div class="status-box">
+      <h2 class="status-title">התור של:</h2>
+      <div class="current-player x" id="status">X</div>
+    </div>
+
+    <div class="score-board">
+      <div class="score">
+        <span>X</span>: <span id="scoreX">0</span>
+      </div>
+      <div class="score">
+        <span>O</span>: <span id="scoreO">0</span>
+      </div>
+    </div>
+
+    <div class="board">
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+      <button class="cell"></button>
+    </div>
+
+    <p class="info-text">לחץ על תא פנוי כדי להתחיל לשחק</p>
+
+    <div class="actions">
+      <button class="reset-btn" id="resetBtn">איפוס משחק</button>
+      <button class="score-reset-btn" id="resetScoreBtn">איפוס ניקוד</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

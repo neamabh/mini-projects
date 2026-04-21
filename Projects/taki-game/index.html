@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAKI - 2 Players</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>TAKI</h1>
+      <p class="sub">גרסת 2 שחקנים</p>
+
+      <div class="panel">
+        <h2>סטטוס משחק</h2>
+        <div class="info-row">
+          <span>תור נוכחי:</span>
+          <strong id="turnLabel">שחקן 1</strong>
+        </div>
+        <div class="info-row">
+          <span>קלפים בקופה:</span>
+          <strong id="deckCount">0</strong>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>ניקוד</h2>
+        <div class="info-row">
+          <span>שחקן 1:</span>
+          <strong id="score1">0</strong>
+        </div>
+        <div class="info-row">
+          <span>שחקן 2:</span>
+          <strong id="score2">0</strong>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>הודעה</h2>
+        <p id="messageBox">לחצי על "משחק חדש" כדי להתחיל.</p>
+      </div>
+
+      <div class="panel buttons-panel">
+        <button id="newGameBtn">משחק חדש</button>
+        <button id="drawBtn">משוך קלף</button>
+        <button id="resetScoresBtn">איפוס ניקוד</button>
+      </div>
+    </aside>
+
+    <main class="board">
+      <section class="top-player-area area-box">
+        <div class="player-title">הקלפים של שחקן 2</div>
+        <div id="topHand" class="hand"></div>
+      </section>
+
+      <section class="middle-area area-box">
+        <div class="deck-pile-wrap">
+          <div class="zone">
+            <div class="zone-label">קופה</div>
+            <button id="deckBtn" class="taki-card back-card" type="button">
+              <div class="inner">
+                <div class="center-text">TAKI</div>
+              </div>
+            </button>
+          </div>
+
+          <div class="zone">
+            <div class="zone-label">הקלף המוביל</div>
+            <div id="pileCardWrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-player-area area-box">
+        <div class="player-title">הקלפים של שחקן 1</div>
+        <div id="bottomHand" class="hand"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>משחק הזיכרון - סוגי פרחים</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="top-header">
+      <h1>🌸 משחק הזיכרון - סוגי פרחים 🌸</h1>
+      <p class="subtitle">מצאי את כל זוגות הפרחים בזמן הכי טוב ובכמה שפחות מהלכים</p>
+    </header>
+
+    <section class="stats-panel">
+      <div class="stat-box">
+        <span class="label">מהלכים</span>
+        <span id="moves">0</span>
+      </div>
+
+      <div class="stat-box">
+        <span class="label">זמן</span>
+        <span id="timer">00:00</span>
+      </div>
+
+      <div class="stat-box best">
+        <span class="label">שיא מהלכים</span>
+        <span id="bestMoves">—</span>
+      </div>
+
+      <div class="stat-box best">
+        <span class="label">שיא זמן</span>
+        <span id="bestTime">—</span>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="restartBtn" class="main-btn">🔄 משחק חדש</button>
+      <button id="resetScoresBtn" class="secondary-btn">🗑️ איפוס שיאים</button>
+    </section>
+
+    <section class="game-wrapper">
+      <div id="gameBoard" class="game-board"></div>
+    </section>
+
+    <section class="message-box">
+      <p id="statusText">לחצי על שני קלפים כדי למצוא זוגות תואמים.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

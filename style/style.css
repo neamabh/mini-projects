@@ -238,3 +238,68 @@ body {
     font-size: 28px;
   }
 }
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #b76e79;
+  margin-bottom: 20px;
+}
+
+/* ABOUT */
+.about {
+  background: #fff0f5;
+  padding: 20px;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.about h2 {
+  color: #d16b86;
+  margin-bottom: 10px;
+}
+
+.about p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.contact {
+  background: #ffe4ec;
+  padding: 20px;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #d16b86;
+  margin-bottom: 15px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8c8dc;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-item:hover {
+  background: #d16b86;
+}
